@@ -1,0 +1,49 @@
+frontend:
+  root:
+    url: http://localhost:5173/
+logging:
+  level:
+    org:
+      springframework:
+        session: DEBUG
+        security: DEBUG
+      hibernate:
+        SQL: debug
+server:
+  error:
+    include-stacktrace: never
+  port: 9000
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+spring:
+  datasource:
+    password: rootroot
+    url: jdbc:mysql://localhost:3306/myedu?connectionTimeZone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        jdbc:
+          batch-size: 20
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      url: redis://localhost:6379
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+video:
+  storage:
+    path: C:\Users\Hokage\Desktop\VideoStorage
